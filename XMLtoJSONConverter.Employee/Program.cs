@@ -11,10 +11,14 @@ namespace XMLtoJSONConverter.Employee
     {
         static void Main(string[] args)
         {
+            // This will get the current WORKING directory (i.e., \bin\debug)
             string workingDirectory = Environment.CurrentDirectory;
 
+            // This will get the current PROJECT directory
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+
             XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(workingDirectory + "/SourceFiles/XMLSample.xml");
+            xmlDoc.Load(projectDirectory + "\\SourceFiles\\XMLSample.xml");
             Console.WriteLine("XML ==> " + xmlDoc.InnerXml);
 
             string empJSON = XMLtoJSON(xmlDoc.InnerXml);

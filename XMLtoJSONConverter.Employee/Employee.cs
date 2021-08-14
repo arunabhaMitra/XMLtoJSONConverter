@@ -2,7 +2,7 @@
 
 namespace XMLtoJSONConverter.Employee
 {
-    class Employee
+    public class Employee
     {
         public int EmployeeID { get; set; }
         public string FirstName { get; set; }
